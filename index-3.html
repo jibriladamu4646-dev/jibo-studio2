@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#16162e">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Jibo Studio · Learn Graphic Design</title>
+<style>
+:root{--bg:#f6f3ff;--ink:#16162e;--mute:#5d5d7a;--card:#fff;--line:#d9d4f0;--pink:#e4005a;--blue:#2740e0;--sun:#ffc933;--ok:#0a8a4f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12122a;--ink:#f2f0ff;--mute:#a9a7c8;--card:#1d1d3c;--line:#34345c;--pink:#ff5c93;--blue:#8fa0ff;--ok:#4ade9a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12122a;--ink:#f2f0ff;--mute:#a9a7c8;--card:#1d1d3c;--line:#34345c;--pink:#ff5c93;--blue:#8fa0ff;--ok:#4ade9a;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Bricolage Grotesque","Segoe UI",system-ui,sans-serif}
+main{max-width:640px;margin:0 auto;padding:20px 18px 48px}
+header{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.mark{width:44px;height:44px;flex:none;border-radius:50%;background:var(--pink);position:relative;overflow:hidden}
+.mark::before{content:"";position:absolute;width:30px;height:30px;background:var(--blue);left:-6px;top:20px;border-radius:6px;transform:rotate(18deg)}
+.mark::after{content:"";position:absolute;width:0;height:0;border:9px solid transparent;border-bottom:16px solid var(--sun);right:5px;top:3px}
+h1{font-size:1.25rem;margin:0;line-height:1.15}
+header p{margin:0;color:var(--mute);font-size:.85rem}
+.hero{background:var(--ink);color:var(--bg);border-radius:20px;padding:22px 20px;margin-bottom:20px}
+.hero h2{font-size:1.7rem;line-height:1.1;margin:0 0 8px;font-weight:800}
+.hero p{margin:0 0 16px;opacity:.85}
+.bar{height:10px;border-radius:5px;background:rgba(255,255,255,.2);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--sun);transition:width .5s}
+.hero small{display:block;margin-top:8px;opacity:.8}
+.list{display:grid;gap:10px}
+.item{display:flex;gap:14px;align-items:center;text-align:left;width:100%;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:14px;color:inherit;font:inherit;cursor:pointer}
+.item:hover{border-color:var(--blue)}
+.item:focus-visible,.btn:focus-visible,.opt:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.sw{width:46px;height:46px;border-radius:12px;flex:none;display:grid;place-items:center;font-weight:800;color:#fff}
+.item b{display:block}.item span.s{color:var(--mute);font-size:.88rem}
+.done{margin-left:auto;color:var(--ok);font-weight:700;font-size:.85rem}
+.back{background:none;border:0;color:var(--blue);font:inherit;font-weight:700;padding:6px 0;cursor:pointer;margin-bottom:8px}
+.lesson h2{font-size:1.6rem;margin:0 0 6px;line-height:1.15}
+.lesson .lead{color:var(--mute);margin:0 0 16px}
+.pt{background:var(--card);border-left:6px solid var(--c,var(--pink));border-radius:10px;padding:12px 14px;margin-bottom:10px}
+.pt b{display:block}
+.demo{display:flex;gap:8px;margin:14px 0}
+.demo div{flex:1;height:64px;border-radius:12px;display:grid;place-items:center;font-weight:700;font-size:.8rem;color:#fff}
+.q{margin-top:20px;background:var(--card);border:2px solid var(--line);border-radius:16px;padding:16px}
+.q h3{margin:0 0 10px;font-size:1.05rem}
+.opt{display:block;width:100%;text-align:left;margin-bottom:8px;padding:11px 12px;border-radius:10px;border:2px solid var(--line);background:transparent;color:inherit;font:inherit;cursor:pointer}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 15%,transparent)}
+.opt.wrong{border-color:var(--pink);background:color-mix(in srgb,var(--pink) 15%,transparent)}
+.msg{min-height:1.4em;font-weight:700;margin:4px 0 0}
+.btn{background:var(--pink);color:#fff;border:0;border-radius:12px;padding:12px 18px;font:inherit;font-weight:700;cursor:pointer;margin-top:10px}
+.tools{display:flex;justify-content:flex-end;margin-bottom:8px}
+.tools button{background:none;border:1px solid var(--line);color:var(--mute);border-radius:8px;padding:4px 10px;font:inherit;font-size:.8rem;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+var L=[
+{t:"Color",s:"How colors work together",c:"#e4005a",lead:"Color is the first thing people notice in your design.",
+pts:[["Color wheel","The primary colors are red, blue and yellow. Mixing them gives you every other color."],["Contrast","Dark text on a light background is easy to read. Similar colors make text hard to read."],["Palette","Pick 3 to 5 colors per project: a main color, a second color and an accent."]],
+demo:["#e4005a","#2740e0","#ffc933","#16162e"],
+q:["How many colors should one project's palette have?",["3 to 5","20 or more","Just one"],0]},
+{t:"Typography",s:"Choosing and using fonts",c:"#2740e0",lead:"Type gives your design its voice and personality.",
+pts:[["Font family","Use two fonts at most: one for headings, one for body text."],["Hierarchy","Headings are bigger and bolder, body text is smaller. The eye follows size."],["Spacing","A line height of 1.4 to 1.6 makes long text easier to read."]],
+q:["How many fonts suit a single poster?",["Every font you have","One or two","Ten"],1]},
+{t:"Layout & Composition",s:"Arranging things on the page",c:"#ffc933",lead:"Layout is how the eye travels through your design.",
+pts:[["Alignment","Line things up (left, center or right) to keep the design clean."],["White space","Empty space is not wasted. It gives elements room to breathe."],["Rule of thirds","Split the page into 3 columns and 3 rows. Place the main element where the lines cross."]],
+q:["What is white space?",["Empty space left on purpose","A mistake in the design","Just the color white"],0]},
+{t:"Logo Design",s:"Making a simple, strong logo",c:"#0a8a4f",lead:"A good logo can be remembered within seconds.",
+pts:[["Simplicity","A simple logo works small or large, on a phone or on a billboard."],["Shape","Use one meaningful shape, like a circle or square, that represents the business."],["Testing","Try your logo in black and white before adding color."]],
+q:["Why test a logo in black and white first?",["It costs more","To check the shape works without color","It has no use"],1]},
+{t:"Tools",s:"Software to start with",c:"#8a2be2",lead:"Tools help, but skill is what matters most.",
+pts:[["Canva","Easy for beginners. Works on phone or computer."],["Adobe Illustrator / Inkscape","For vector graphics and logos. Inkscape is free."],["Photoshop / GIMP / Photopea","For photo editing. GIMP and Photopea are free."]],
+q:["Which is best for a beginner?",["Canva","None of them","Only expensive software"],0]},
+{t:"Practice Project",s:"Make your first poster",c:"#ff7a00",lead:"Learning sticks when you make things with your own hands.",
+pts:[["Step 1","Pick a topic, such as an ad for a school event."],["Step 2","Choose a palette of 3 colors and 2 fonts."],["Step 3","Lay out a heading, an image or shape, and the details. Leave white space."],["Step 4","Show it to someone, get feedback, then improve it."]],
+q:["What should you do after finishing your poster?",["Hide it","Show it to someone and get feedback","Delete it"],1]}
+];
+var done={},app=document.getElementById("app");
+try{done=JSON.parse(localStorage.getItem("jibo-done")||"{}")}catch(e){}
+function save(){try{localStorage.setItem("jibo-done",JSON.stringify(done))}catch(e){}}
+function count(){return Object.keys(done).length}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function home(){
+var n=count(),p=Math.round(n/L.length*100);
+var h='<header><div class="mark" aria-hidden="true"></div><div><h1>Jibo Studio</h1><p>Digital Technology</p></div></header>'+
+'<section class="hero"><h2>Learn graphic design, step by step.</h2><p>6 short lessons, each with a question to test what you learned.</p><div class="bar"><i style="width:'+p+'%"></i></div><small>'+n+' of '+L.length+' completed</small></section><div class="list">';
+L.forEach(function(x,i){h+='<button class="item" data-i="'+i+'"><div class="sw" style="background:'+x.c+'">'+(i+1)+'</div><div><b>'+esc(x.t)+'</b><span class="s">'+esc(x.s)+'</span></div>'+(done[i]?'<span class="done">Completed</span>':'')+'</button>'});
+app.innerHTML=h+'</div>';
+app.querySelectorAll(".item").forEach(function(b){b.onclick=function(){lesson(+b.dataset.i)}});
+location.hash="";window.scrollTo(0,0)}
+function lesson(i){
+var x=L[i],h='<button class="back" id="bk">Back to lessons</button><div class="lesson"><h2>'+esc(x.t)+'</h2><p class="lead">'+esc(x.lead)+'</p>';
+x.pts.forEach(function(p){h+='<div class="pt" style="--c:'+x.c+'"><b>'+esc(p[0])+'</b>'+esc(p[1])+'</div>'});
+if(x.demo){h+='<div class="demo">';x.demo.forEach(function(c){h+='<div style="background:'+c+'">'+c+'</div>'});h+='</div>'}
+h+='<div class="q"><h3>'+esc(x.q[0])+'</h3>';
+x.q[1].forEach(function(o,k){h+='<button class="opt" data-k="'+k+'">'+esc(o)+'</button>'});
+h+='<p class="msg" role="status" aria-live="polite"></p></div></div>';
+app.innerHTML=h;window.scrollTo(0,0);
+document.getElementById("bk").onclick=home;
+var opts=app.querySelectorAll(".opt"),msg=app.querySelector(".msg");
+opts.forEach(function(b){b.onclick=function(){
+var k=+b.dataset.k;
+if(k===x.q[2]){b.className="opt right";msg.textContent="Correct!";done[i]=1;save();
+if(!app.querySelector(".btn")){var nb=document.createElement("button");nb.className="btn";nb.textContent=i<L.length-1?"Next lesson":"Back to lessons";nb.onclick=function(){i<L.length-1?lesson(i+1):home()};msg.after(nb)}}
+else{b.className="opt wrong";msg.textContent="Not quite. Try again."}}})}
+home();
+if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}
+</script>
+</body>
+</html>
